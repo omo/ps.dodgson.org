@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南瓜糖の日々<%= ' - ' + current_article.title unless current_article.nil? %></title>
+<%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+<link rel="stylesheet" href="/stylesheets/screen.css">
+</head>
+<body>
+<h1><%= current_article.title %></h1>
+<div id="main" role="main" class="page-main">
+  <%= yield %>
+</div>
+<hr />
+<div class="signature"><%= current_article.date.strftime('%Y/%m/%d') %> @ <span><a class="name" href="/">南瓜糖の日々</a></span></div>
+</body>
+</html>
