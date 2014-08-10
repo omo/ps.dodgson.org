@@ -109,3 +109,8 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+# https://github.com/fredjean/middleman-s3_sync
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket = 'ps.dodgson.org'
+end

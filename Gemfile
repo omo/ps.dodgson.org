@@ -8,3 +8,6 @@ gem "redcarpet"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
+
+# https://github.com/fredjean/middleman-s3_sync
+gem 'middleman-s3_sync'
