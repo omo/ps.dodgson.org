@@ -7,6 +7,11 @@
 <title>南瓜糖の日々<%= ' - ' + current_article.title unless current_article.nil? %></title>
 <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 <link rel="stylesheet" href="/stylesheets/screen.css">
+<% unless current_page.data.head.nil? %>
+  <% for p in current_page.data.head %>
+    <%= partial "/partials/#{p}" %>
+  <% end %>
+<% end %>
 </head>
 <body>
 <h1><%= current_article.title %></h1>
